@@ -27,8 +27,3 @@ with open("math.txt", "w", encoding="utf8") as file:
     file.write(str1)
 with open("key.txt", "w", encoding="utf8") as file:
     file.write(str2)
-print("150道100以内加减法混合题试卷:")
-print(str1)
-print("150道100以内加减法混合题试卷(带答案): ")
-print(str2, end="")
-print("\033[0m", end="")
