@@ -9,8 +9,8 @@ import pygetwindow as gw
 
 try:
     root = os.path.abspath(os.path.dirname(__file__))
-    driver = ctypes.CDLL(os.path.join(os.path.dirname(os.path.realpath(sys.executable)), 'logitech.driver.dll'))
-    # driver = ctypes.CDLL(r'E:\work\hosts_tool\logitech.driver.dll')
+    # driver = ctypes.CDLL(os.path.join(os.path.dirname(os.path.realpath(sys.executable)), 'logitech.driver.dll'))
+    driver = ctypes.CDLL(r'C:\Users\admin\Desktop\press\logitech.driver.dll')
     ok = driver.device_open() == 1  # 该驱动每个进程可打开一个实例
     if not ok:
         print('Error, GHUB or LGS driver not found')
