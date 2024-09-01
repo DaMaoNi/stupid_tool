@@ -5,7 +5,7 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-FILE_PATH = r'E:\jellyfin\iptv\test.m3u'
+FILE_PATH = r'd:\iptv\test.m3u'
 
 
 def check_url(url):
