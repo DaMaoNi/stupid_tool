@@ -28,4 +28,4 @@ def helper(l, h):
 
 
 if __name__ == '__main__':
-    print(f'年利率：{round(helper(l, h) * 100, 4)}%')
+    print(f'年利率：{round(helper(l, h) * 100, 2)}%')
