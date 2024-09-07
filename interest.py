@@ -4,9 +4,9 @@
 import decimal
 import sys
 
-a = decimal.Decimal(95000)  # 贷款金额
-n = decimal.Decimal(36)  # 期数
-r = decimal.Decimal(3699.4)  # 月供
+a = decimal.Decimal(100000)  # 贷款金额
+n = decimal.Decimal(360)  # 期数
+r = decimal.Decimal(440)  # 月供
 h = decimal.Decimal(sys.maxsize)  # 利率上限
 l = decimal.Decimal(0)  # 利率下限
 
@@ -28,4 +28,4 @@ def helper(l, h):
 
 
 if __name__ == '__main__':
-    print(f'年利率：{round(helper(l, h) * 100, 1)}%')
+    print(f'年利率：{round(helper(l, h) * 100, 4)}%')
