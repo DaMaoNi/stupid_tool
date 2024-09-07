@@ -4,15 +4,15 @@
 import decimal
 import sys
 
-a = 67800  # 贷款金额
-n = 60  # 期数
-r = 1328  # 月供
-h = sys.maxsize  # 利率上限
-l = 0  # 利率下限
+a = decimal.Decimal(95000)  # 贷款金额
+n = decimal.Decimal(36)  # 期数
+r = decimal.Decimal(3699.4)  # 月供
+h = decimal.Decimal(sys.maxsize)  # 利率上限
+l = decimal.Decimal(0)  # 利率下限
 
 
 def cal_interest(a, i, n):
-    j = decimal.Decimal(i / 12)
+    j = i / 12
     return a * j * (1 + j) ** n / ((1 + j) ** n - 1)
 
 
