@@ -1,6 +1,8 @@
+import time
+
 import pyttsx3
 
-CNT = 6
+CNT = 5
 
 if __name__ == '__main__':
     # 初始化TTS引擎
@@ -18,6 +20,5 @@ if __name__ == '__main__':
     for text in texts:
         for i in range(CNT):
             engine.say(text)
-
-    # 等待所有当前任务完成
-    engine.runAndWait()
+            engine.runAndWait()
+            time.sleep(2)
