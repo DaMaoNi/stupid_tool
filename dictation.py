@@ -1,6 +1,6 @@
 import pyttsx3
 
-CNT = 10
+CNT = 5
 
 if __name__ == '__main__':
     # 初始化TTS引擎
