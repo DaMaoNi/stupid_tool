@@ -45,7 +45,7 @@ def get_value(stock_code):
         pass
 
     try:
-        return get_market_value(stock_code) / cal_profit(stock_code) / 4
+        return get_market_value(stock_code) / cal_profit(stock_code + '.BJ') / 4
     except:
         pass
     return res
