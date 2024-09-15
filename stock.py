@@ -67,3 +67,4 @@ if __name__ == '__main__':
     stock_codes = efinance.stock.get_all_company_performance().get('股票代码')
     for stock_code in stock_codes:
         judge(stock_code)
+    print('done!')
