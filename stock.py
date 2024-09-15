@@ -60,6 +60,7 @@ def judge(tmp_code):
         elif pe < 0 < value <= 20:
             print(f'{stock_code} omg!!!value:{value},pe:{pe}')
     except Exception as e:
+        print(f'{stock_code} error!!!')
         print(e)
 
 
