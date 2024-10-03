@@ -4,6 +4,8 @@ import string
 import efinance
 import requests
 
+TEST = False
+
 
 def generate_random_number_string(length=18):
     return ''.join(random.choices(string.digits, k=length))
@@ -52,6 +54,7 @@ def get_value(stock_code):
 
 
 def judge(tmp_code):
+    global TEST
     try:
         value = get_value(tmp_code)
         pe = get_pe(tmp_code)
@@ -59,15 +62,19 @@ def judge(tmp_code):
             print(f'{stock_code} error.')
         elif pe < 0 < value <= 20:
             print(f'{stock_code} omg!!!value:{value},pe:{pe}')
+        elif TEST:
+            print(f'{stock_code} omg!!!value:{value},pe:{pe}')
     except Exception as e:
         print(f'{stock_code} error!!!')
         print(e)
 
 
 if __name__ == '__main__':
-    stock_codes = []
+    stock_codes = ['']
     if len(stock_codes) == 0:
         stock_codes = efinance.stock.get_all_company_performance().get('股票代码')
+    else:
+        TEST = True
     for stock_code in stock_codes:
         judge(stock_code)
     print('done!')
