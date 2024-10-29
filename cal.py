@@ -48,18 +48,18 @@ def main(res):
         b = random.randint(1, 100)
         r = a + b
         if r <= 100:
-            res.append(f'{a}+{b}={r}')
+            res.add(f'{a}+{b}={r}')
     elif direction == '-':
         a = random.randint(1, 100)
         b = random.randint(1, 100)
         r = a - b
         if r >= 0:
-            res.append(f'{a}-{b}={r}')
+            res.add(f'{a}-{b}={r}')
     else:
         a = random.randint(2, 9)
         b = random.randint(2, 9)
         r = a * b
-        res.append(f'{a}x{b}={r}')
+        res.add(f'{a}x{b}={r}')
 
 
 if __name__ == '__main__':
