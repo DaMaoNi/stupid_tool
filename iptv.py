@@ -17,7 +17,7 @@ def txt_to_m3u(txt_file_path, m3u_file_path):
         # 打开M3U文件准备写入
         with open(m3u_file_path, 'w', encoding='utf-8') as m3u_file:
             # 写入M3U文件头
-            m3u_file.write('#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml"\n')
+            m3u_file.write('#EXTM3U x-tvg-url="https://epg.zbds.top"\n')
 
             # 遍历每一行，写入M3U文件
             for line in lines:
