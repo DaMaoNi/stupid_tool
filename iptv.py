@@ -35,7 +35,7 @@ def txt_to_m3u(txt_file_path, m3u_file_path):
 if __name__ == '__main__':
     txt_file_path = 'txt_file_path'
     with open(txt_file_path, 'w', encoding='utf-8') as txt_file:
-        text = requests.get('https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u',
+        text = requests.get('https://fanmingming.com/txt?url=https://live.fanmingming.cn/tv/m3u/ipv6.m3u',
                             timeout=30).text
         txt_file.write(text)
 
