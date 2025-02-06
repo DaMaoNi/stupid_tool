@@ -72,7 +72,7 @@ def judge(tmp_code):
 if __name__ == '__main__':
     stock_codes = []
     if len(stock_codes) == 0:
-        stock_codes = efinance.stock.get_all_company_performance().get('股票代码')
+        stock_codes = efinance.stock.get_realtime_quotes('沪深A股')['股票代码']
     else:
         TEST = True
     for stock_code in stock_codes:
