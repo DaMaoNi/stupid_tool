@@ -17,7 +17,7 @@ def txt_to_m3u(txt_file_path, m3u_file_path):
         # 打开M3U文件准备写入
         with open(m3u_file_path, 'w', encoding='utf-8') as m3u_file:
             # 写入M3U文件头
-            m3u_file.write('#EXTM3U x-tvg-url="https://epg.zbds.top"\n')
+            # m3u_file.write('#EXTM3U x-tvg-url="https://epg.zbds.top"\n')
 
             # 遍历每一行，写入M3U文件
             for line in lines:
@@ -35,7 +35,7 @@ def txt_to_m3u(txt_file_path, m3u_file_path):
 if __name__ == '__main__':
     txt_file_path = 'txt_file_path'
     with open(txt_file_path, 'w', encoding='utf-8') as txt_file:
-        text = requests.get('https://gitee.com/hw2837/iptv/raw/master/iptv',
+        text = requests.get('https://live.zbds.top/tv/iptv4.txt',
                             timeout=30).text
         txt_file.write(text)
 
