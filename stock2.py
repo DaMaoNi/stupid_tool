@@ -16,7 +16,8 @@ if __name__ == '__main__':
         net_profit = row.get('净利润', '未知')
         condition = net_profit > 0 and profit_growth > revenue_growth > 0
         if condition:
-            print(stock_code, stock_name, announce_date, revenue_growth, profit_growth, net_profit)
+            market_value = efinance.stock.get_latest_quote(stock_code).get('总市值')[0]
+            print(stock_code, stock_name, announce_date, revenue_growth, profit_growth, net_profit, market_value)
 
             # 新增：将符合条件的数据添加到结果列表
             result_data.append({
@@ -25,11 +26,13 @@ if __name__ == '__main__':
                 '公告日期': announce_date,
                 '营业收入同比增长': revenue_growth,
                 '净利润同比增长': profit_growth,
-                '净利润': net_profit
+                '净利润': net_profit,
+                '总市值': market_value
             })
 
     # 新增：将结果保存为 Excel 文件
     if result_data:
+        result_data.sort(key=lambda x: x['market_value'], reverse=True)
         try:
             result_df = pd.DataFrame(result_data)
             result_df.to_excel('上市公司业绩表现.xlsx', index=False)
