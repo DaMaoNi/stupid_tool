@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
     # 新增：将结果保存为 Excel 文件
     if result_data:
-        result_data.sort(key=lambda x: x['market_value'], reverse=True)
+        result_data.sort(key=lambda x: x['总市值'], reverse=True)
         try:
             result_df = pd.DataFrame(result_data)
             result_df.to_excel('上市公司业绩表现.xlsx', index=False)
