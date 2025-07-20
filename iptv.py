@@ -20,6 +20,7 @@ if __name__ == "__main__":
                 stream_response = requests.get(iptv_url, stream=True, timeout=3)
                 chunk = next(stream_response.iter_content(chunk_size=1024))
                 if chunk:
+                    print(iptv_url)
                     f.write(iptv_url)
                     f.write('\n')
             except:
