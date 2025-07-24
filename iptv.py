@@ -10,15 +10,17 @@ if __name__ == "__main__":
         data = json.load(f)
     total = len(data)
     i = 0
-    for item in data:
-        try:
-            url = item["URL"]
-            iptv_url = f'{url}{TEST_URL}'
-            i += 1
-            print(f'{i}/{total}')
-            stream_response = requests.get(iptv_url, stream=True, timeout=3)
-            chunk = next(stream_response.iter_content(chunk_size=1024))
-            if chunk:
-                print(iptv_url)
-        except:
-            pass
+    with open('iptv.txt', 'w', encoding='utf-8') as f:
+        for item in data:
+            try:
+                url = item["URL"]
+                iptv_url = f'{url}{TEST_URL}'
+                i += 1
+                print(f'{i}/{total}')
+                stream_response = requests.get(iptv_url, stream=True, timeout=3)
+                chunk = next(stream_response.iter_content(chunk_size=1024))
+                if chunk:
+                    print(iptv_url)
+                    f.write(f'{iptv_url}\n')
+            except:
+                pass
