@@ -17,7 +17,7 @@ if __name__ == '__main__':
         condition = net_profit > 0 and profit_growth > revenue_growth > 0
         if condition:
             market_value = efinance.stock.get_latest_quote(stock_code).get('总市值')[0]
-            if market_value < 20000000000:
+            if market_value < 100000000000:
                 continue
             print(stock_code, stock_name, announce_date, revenue_growth, profit_growth, net_profit, market_value)
 
